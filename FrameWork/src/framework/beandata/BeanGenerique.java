@@ -78,7 +78,7 @@ public class BeanGenerique implements Serializable {
 		              szData = request.getAttribute(beanParam.getName());
 	          	}
 
-		  if (szData != null) {
+//		  if (szData != null) {
 			if (ret == null) {
 			  ret = new Vector(getParameter().size());
 			  ret.setSize(getParameter().size());
@@ -98,14 +98,15 @@ public class BeanGenerique implements Serializable {
 	            		ex.printStackTrace();
 	            	}
 	            }
-			  if (beanParam.getIndex() != null)
+			}
+			if (beanParam.getIndex() != null) {
 				// Insere le critere dans la liste
 				ret.setElementAt(szData, beanParam.getIndex().intValue());
-			  else
+			} else {
 				// Ajoute le critere à la liste
 				ret.setElementAt(szData, i);
 			}
-		  }
+//		  }
 		}
 	  }
 	  if (ret == null)
